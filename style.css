@@ -5,22 +5,79 @@
 body {
     background-color: #EEF9BF;
     font-family: 'Roboto', sans-serif;
+    align-content: center;
 }
 
-.game{
+.game {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
     width: 1110px;
     height: 629px;
-    text-align: center;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
     margin-top: 40px;
     font-weight: 700;
     font-size: 56px;
     line-height: 66px;
     letter-spacing: -0.004em;
     color: #75B79E;
+}
+
+main{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%);
+    height: 326px;
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    flex-wrap: wrap;
+}
+
+.carta {
+    width: 117px;
+    height: 146px;
+    background-color: #A7E9AF;
+    border: 1px solid #99CEA8;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* imagem dentro da carta */
+.carta img {
+    width: 100px;
+    height: 100px;
+}
+
+
+/* Versão mobile */
+@media (max-width: 600px) {
+    .game {
+        width: 335px;
+        height: 100%;
+    }
+
+    header h1 {
+        width: 312px;
+        height: 63px;
+        font-size: 36px;
+        font-size: 36px;
+        line-height: 42px;
+        text-align: center;
+        letter-spacing: -0.004em;
+    }
+    main{
+        width: 146px;
+        top: 150px;
+    }
 }
