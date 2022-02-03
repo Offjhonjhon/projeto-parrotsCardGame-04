@@ -30,7 +30,7 @@ header h1 {
     color: #75B79E;
 }
 
-main{
+main {
     position: relative;
     left: 50%;
     top: 50%;
@@ -64,15 +64,15 @@ main{
     transform-style: preserve-3d;
 }
 
-.back-face {
+.back-face-initial {
     transform: rotateY(180deg);
   }
 
-  .carta:hover .back-face {
+.back-face {
     transform: rotateY(0deg);
   }
 
-  .carta:hover .front-face {
+.front-face {
     transform: rotateY(-180deg);
   }
     

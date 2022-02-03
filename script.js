@@ -1,11 +1,12 @@
 let quantidadeCartas = 0;
 let gifs = ['bobrossparrot','bobrossparrot','explodyparrot','explodyparrot','fiestaparrot','fiestaparrot','metalparrot','metalparrot','revertitparrot','revertitparrot','tripletsparrot','tripletsparrot','unicornparrot','unicornparrot'];
 
-let cartaHtml = `   <div class="carta" ">
-                        <div  class="front-face face" >
+let cartaHtml = `   <div class="carta" onclick="turnCard(this)">
+                        <div class="front face" >
                             <img src="imgs/front.png" alt="">
                         </div>
-                            <div  class="back-face face">
+
+                        <div class="back back-face-initial face">
                         </div>
                     </div>
 `;
@@ -47,7 +48,7 @@ function addGifs(){
     gifPosition = shuffleArray(gifPosition);
 
     // seleciona a parte de tras da carta
-    let objectCard = document.querySelectorAll(".back-face");
+    let objectCard = document.querySelectorAll(".back");
     
     // insere os gifs
     for(let i = 0; i < (quantidadeCartas); i++){
@@ -66,7 +67,18 @@ function shuffleArray(initialArray){
         initialArray[newPosition] = temporaryPosition;
     }
     return initialArray;
-};
+}
+
+// vira a carta
+function turnCard(card){
+    let front = card.querySelector(".front");
+    front.classList.add("front-face");
+
+    let back = card.querySelector(".back");
+    back.classList.add("back-face");
+    back.classList.remove("back-face-initial");
+} 
+
 
 
 
