@@ -1,4 +1,13 @@
 let quantidadeCartas = 0;
+let card1 = null;
+let card2 = null;
+let parentCard1 = null;
+let parentCard2 = null;
+let movementCounter = 0;
+let timeCounter = 0;
+let interval = null;
+let score = 0;
+
 let gifs = ['bobrossparrot','bobrossparrot','explodyparrot','explodyparrot','fiestaparrot','fiestaparrot','metalparrot','metalparrot','revertitparrot','revertitparrot','tripletsparrot','tripletsparrot','unicornparrot','unicornparrot'];
 
 let cartaHtml = `   <div class="carta" onclick="turnCard(this), select(this)">
@@ -11,18 +20,16 @@ let cartaHtml = `   <div class="carta" onclick="turnCard(this), select(this)">
                     </div>
 `;
 
-let card1 = null;
-let card2 = null;
-let parentCard1 = null;
-let parentCard2 = null;
 
-
+interval = setInterval(timer,1000);
 pegarNumeroCartas();
 colocarCartas();
 
+
+
 // pega a quantidade de cartas a ser inserida 
 function pegarNumeroCartas() {
-    quantidadeCartas = prompt("Quantas cartas vc quer?");
+    quantidadeCartas = parseInt(prompt("Quantas cartas vc quer?"));
 
     // confere se a quantidade é um valor par entre 2 e 14
     if ((quantidadeCartas < 2) || (quantidadeCartas > 14) || ((quantidadeCartas % 2) !== 0)) {
@@ -83,6 +90,9 @@ function turnCard(card){
     // seleciona o back da carta
     let back = card.querySelector(".back");
     back.style.transform = "rotateY(0)";
+
+    // chama o contador de movimentos
+    counter();
 } 
 
 // desvira a carta
@@ -118,19 +128,46 @@ function select(card){
     }       
 
     if(card1 !== null && card2 !== null && card1 !== card2){
-        setTimeout(unturnCard, 500, parentCard1, parentCard2);
+        setTimeout(unturnCard, 1000, parentCard1, parentCard2);
         card1 = null;
         card2 = null;
     }
     else if(card1 !== null && card2 !== null && card1 === card2){
         card1 = null;
         card2 = null;
+        score += 2;
     }
-    console.log(card1);
-    console.log(card2);
 }
 
+// conta os movimentos realizados
+function counter(){
+    movementCounter ++;
+    let counterDisplay = document.querySelector("aside p:nth-of-type(2)");
+    counterDisplay.innerHTML = movementCounter;
+}
 
+// conta o tempo decorrido
+function timer(){
+    const timeDisplay = document.querySelector("aside p:first-of-type");
+    if(score === quantidadeCartas){
+        clearInterval(interval);
+        endGame();
+    }
+    else{
+    timeDisplay.innerHTML = timeCounter;
+    timeCounter ++; 
+    }
+}
+
+// finaliza o jogo
+function endGame(){
+    alert(`Você ganhou em ${movementCounter} jogadas e em ${timeCounter} segundos.`);
+    const verificador = prompt("Gostaria de jogar novamente s/n?");
+    if(verificador === 's'){
+        location.reload();
+    }
+}
+ 
 
 
 

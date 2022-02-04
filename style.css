@@ -16,6 +16,7 @@ body {
     height: 629px;
     flex-wrap: wrap;
     align-content: center;
+    
 }
 
 header h1 {
@@ -68,21 +69,41 @@ main {
     transform: rotateY(180deg);
   }
 
-.back-face {
-    transform: rotateY(0deg);
-  }
-
-.front-face {
-    transform: rotateY(-180deg);
-  }
-    
-
-
 /* imagem dentro da carta */
 .carta img {
     width: 100px;
     height: 100px;
     z-index: 1;
+}
+
+aside ion-icon{
+    font-size: 35px;
+    color: #75B79E;
+}
+
+aside figure:first-of-type{
+    position: absolute;
+    right: 150px;
+    top: 120px;
+}
+aside figure:nth-of-type(2){
+    position: absolute;
+    right: 150px;
+    top: 170px;
+}
+
+aside p {
+    font-size: 30px;
+    color: #75B79E;
+    position: absolute;
+    right: 60px;
+}
+
+aside p:first-of-type{
+    top: 121px;
+}
+aside p:nth-of-type(2){
+    top: 175px;
 }
 
 
