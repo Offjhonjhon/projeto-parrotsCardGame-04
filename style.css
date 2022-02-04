@@ -64,7 +64,7 @@ main {
     transform-style: preserve-3d;
 }
 
-.back-face-initial {
+.back {
     transform: rotateY(180deg);
   }
 
