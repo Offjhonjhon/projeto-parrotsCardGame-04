@@ -23,7 +23,7 @@ let cardHtml = `   <div data-identifier="card" class="carta" onclick="turnCard(t
 // chama as funções de inicialização
 interval = setInterval(timer, 1000);
 pickUpNumberCards();
-insertCards();  
+insertCards();
 
 
 // pega a quantidade de cartas a ser inserida 
@@ -170,7 +170,7 @@ function timer() {
 // finaliza o jogo
 function endGame() {
     alert(`Você ganhou em ${movementCounter} jogadas e em ${timeCounter - 1} segundos.`);
-    const verificador = prompt("Gostaria de jogar novamente s/n?");
+    const verificador = (prompt("Gostaria de jogar novamente s/n?"));
     // reinicia o jogo
     if (verificador === 's') {
         location.reload();

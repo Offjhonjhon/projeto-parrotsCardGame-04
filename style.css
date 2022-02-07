@@ -133,31 +133,31 @@ aside p:nth-of-type(2) {
         top: 150px;
     }
 
-    
-aside ion-icon {
-    font-size: 25px;
-}
 
-/* CSS do ion-icon do timer */
-aside figure:first-of-type {
-    right: 40px;
-}
+    aside ion-icon {
+        font-size: 25px;
+    }
 
-/* CSS do ion-icon do contador de movimentos */
-aside figure:nth-of-type(2) {
-    right: 40px;
-}
+    /* CSS do ion-icon do timer */
+    aside figure:first-of-type {
+        right: 40px;
+    }
 
-aside p {
-    font-size: 20px;
-    right: 15px;
-}
+    /* CSS do ion-icon do contador de movimentos */
+    aside figure:nth-of-type(2) {
+        right: 40px;
+    }
 
-aside p:first-of-type {
-    top: 123px;
-}
+    aside p {
+        font-size: 20px;
+        right: 15px;
+    }
 
-aside p:nth-of-type(2) {
-    top: 175px;
-}
+    aside p:first-of-type {
+        top: 123px;
+    }
+
+    aside p:nth-of-type(2) {
+        top: 175px;
+    }
 }
