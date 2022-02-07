@@ -28,10 +28,10 @@ insertCards();
 
 // pega a quantidade de cartas a ser inserida 
 function pickUpNumberCards() {
-    cardsQuantity = parseInt(prompt("Quantas cartas vc quer? (De 2 a 14 cartas)"));
+    cardsQuantity = parseInt(prompt("Quantas cartas vc quer? (De 4 a 14 cartas)"));
 
     // confere se a quantidade é um valor par entre 2 e 14
-    if ((cardsQuantity < 2) || (cardsQuantity > 14) || ((cardsQuantity % 2) !== 0)) {
+    if ((cardsQuantity < 4) || (cardsQuantity > 14) || ((cardsQuantity % 2) !== 0)) {
         return pickUpNumberCards();
     }
 }
